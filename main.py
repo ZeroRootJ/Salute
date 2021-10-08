@@ -17,7 +17,7 @@ def sendmail(name, title, contents):
 
     try:
         options = webdriver.ChromeOptions()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         # driver_path = '/Users/yk/PycharmProjects/IPbot/chromedriver'
         driver_path = '/home/ubuntu/base/Salute/chromedriver'
         driver = webdriver.Chrome(driver_path, options=options)
