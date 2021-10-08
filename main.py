@@ -19,6 +19,7 @@ def sendmail(name, title, contents):
         options = webdriver.ChromeOptions()
         # options.add_argument("--headless")
         driver_path = '/Users/yk/PycharmProjects/IPbot/chromedriver'
+        driver_path = '~/base/Salute/chromedriver'
         driver = webdriver.Chrome(driver_path, options=options)
 
         # ROKAF main

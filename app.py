@@ -9,6 +9,26 @@ def hello_world():
     return 'Hello World!'
 
 
+@app.route("/test", methods=['POST'])
+def test():
+    req = request.get_json()
+    res = {
+        "version": "2.0",
+        "template": {
+            "outputs": [
+                {
+                    "simpleText": {
+                        "text": "Skill Server Available"
+                    }
+                }
+            ]
+        }
+    }
+
+    return jsonify(res)
+
+
+
 @app.route("/write", methods=['POST'])
 def write():
     req = request.get_json()
