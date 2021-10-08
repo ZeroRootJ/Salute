@@ -35,7 +35,7 @@ def write():
     name = req["action"]["detailParams"]["Name"]["value"]
     title = req["action"]["detailParams"]["Title"]["value"]
     contents = req["action"]["detailParams"]["Contents"]["value"]
-    sendmail(name, title, contents)
+    print(sendmail(name, title, contents))
     res = {
         "version": "2.0",
         "template": {
