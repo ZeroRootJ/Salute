@@ -22,6 +22,8 @@ def sendmail(name, title, contents):
         driver_path = '/home/ubuntu/base/Salute/chromedriver'
         driver = webdriver.Chrome(driver_path, options=options)
 
+        print("webdriver initialized")
+
         # ROKAF main
         driver.get('https://atc.airforce.mil.kr:444/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub')
         driver.find_element_by_name('searchName').send_keys(soldier_name)
@@ -30,9 +32,13 @@ def sendmail(name, title, contents):
         driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[2]/table/tbody/tr[2]/td[2]/input[3]').send_keys(birthDay)
         driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[3]/span/input').click()
 
+        print("ROKAF main")
+
         # Pop up
         driver.switch_to.window(driver.window_handles[1])
         driver.find_element_by_xpath('/html/body/div/ul/li/input').click()
+
+        print("pop up")
 
         # Submit
         driver.switch_to.window(driver.window_handles[0])
@@ -50,6 +56,8 @@ def sendmail(name, title, contents):
         driver.find_element_by_xpath('/html/body/form[2]/div/div[1]/div/div[2]/table/tbody/tr/td[2]/a/div/span[2]').click()
         driver.find_element_by_xpath('/html/body/form[2]/div/div[1]/div/div[3]/table/tbody/tr[2]/td/input').send_keys(addr_spec)
         driver.find_element_by_xpath('/html/body/form[2]/div/div[1]/div/div[3]/div/a').click()
+
+        print("address")
 
         # Switch to main
         driver.switch_to.window(driver.window_handles[0])
