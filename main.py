@@ -1,5 +1,5 @@
 from selenium import webdriver
-from pyvirtualdisplat import Display
+from pyvirtualdisplay import Display
 import os
 
 
