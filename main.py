@@ -26,13 +26,18 @@ def sendmail(name, title, contents):
 
         # ROKAF main
         driver.get('https://atc.airforce.mil.kr:444/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=sub')
+        print("ROKAF main1")
         driver.find_element_by_name('searchName').send_keys(soldier_name)
+        print("ROKAF main2")
         driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[2]/table/tbody/tr[2]/td[2]/input[1]').send_keys(birthYear)
+        print("ROKAF main3")
         driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[2]/table/tbody/tr[2]/td[2]/input[2]').send_keys(birthMonth)
+        print("ROKAF main4")
         driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[2]/table/tbody/tr[2]/td[2]/input[3]').send_keys(birthDay)
+        print("ROKAF main5")
         driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[3]/span/input').click()
 
-        print("ROKAF main")
+        print("ROKAF main complete")
 
         # Pop up
         driver.switch_to.window(driver.window_handles[1])
