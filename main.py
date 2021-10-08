@@ -12,12 +12,7 @@ def sendmail(name, title, contents):
     addr = '둔산북로 215'
     addr_spec = '8동 404'
 
-    # name = '홍길동'
     rel = '친구'
-    # title = '.'
-    # contents = """
-    # 가나다
-    # """
     pwd = '1234'
 
     try:
@@ -71,10 +66,16 @@ def sendmail(name, title, contents):
 
         # Submit
         driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[2]/span[1]/input').click()
+
+        driver.quit()
         return 1
 
     except:
         return 0
+
+
+if __name__ == '__main__':
+    print(sendmail('홍길동', '인편인편', "인편인편인편"))
 
 
 
