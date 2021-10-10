@@ -16,18 +16,20 @@ def sendmail(name, title, contents):
     pwd = '1234'
 
     options = webdriver.ChromeOptions()
-    options.add_argument("--headless")
+    # options.add_argument("--headless")
     options.add_argument("window-size=1920x1080")
     options.add_argument("disable-gpu")
-    # driver_path = '/Users/yk/PycharmProjects/IPbot/chromedriver'
-    driver_path = '/home/ubuntu/base/Salute/chromedriver'
+    driver_path = '/Users/yk/PycharmProjects/IPbot/chromedriver'
+    # driver_path = '/home/ubuntu/base/Salute/chromedriver'
     driver = webdriver.Chrome(driver_path, options=options)
 
     print("webdriver initialized")
 
     # ROKAF main
     driver.get('https://www.google.com/search?q=%EA%B8%B0%EB%B3%B8%EA%B5%B0%EC%82%AC%ED%9B%88%EB%A0%A8%EB%8B%A8&newwindow=1&sxsrf=AOaemvJrncjSP0NasmiAriUSfFMQMjvVIQ%3A1633863640083&ei=2MdiYZy_BM-U-Abu0Qo&ved=0ahUKEwici4Ov2L_zAhVPCt4KHe6oAgAQ4dUDCA4&uact=5&oq=%EA%B8%B0%EB%B3%B8%EA%B5%B0%EC%82%AC%ED%9B%88%EB%A0%A8%EB%8B%A8&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIECAAQHjIECAAQHjIECAAQHjIECAAQHjIECAAQHjIECAAQHjIECAAQHjIECAAQHjoECCMQJzoICAAQgAQQsQM6CwgAEIAEELEDEIMBOgcIIxDqAhAnOgoIABCABBCHAhAUOgQIABBDSgQIQRgAUJp1WOyKAWCgjAFoBHAAeAKAAYoCiAGnF5IBBjAuMTguMZgBAKABAbABCsABAQ&sclient=gws-wiz')
-    print("ROKAF main1")
+    print("1")
+    driver.find_element_by_xpath('/html/body/div[7]/div/div[9]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div/div/div[1]/a/h3').click()
+    print("2")
     driver.find_element_by_name('searchName').send_keys(soldier_name)
     print("ROKAF main2")
     driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[2]/table/tbody/tr[2]/td[2]/input[1]').send_keys(birthYear)
