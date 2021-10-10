@@ -19,7 +19,7 @@ def sendmail(name, title, contents):
     options.add_argument("--headless")
     options.add_argument("window-size=1920x1080")
     options.add_argument("disable-gpu")
-    # driver_path = '/Users/yk/PycharmProjects/IPbot/chromedriver'
+    driver_path = '/Users/yk/PycharmProjects/IPbot/chromedriver'
     driver_path = '/home/ubuntu/base/Salute/chromedriver'
     driver = webdriver.Chrome(driver_path, options=options)
 
@@ -32,8 +32,8 @@ def sendmail(name, title, contents):
     print("2")
     driver.switch_to.window(driver.window_handles[1])
     print(driver.current_url)
-    driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div[3]/a[3]').click()
-
+    # driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div[3]/a[3]').click()
+    driver.find_element_by_css_selector('#popupWrap > div:nth-child(3) > a:nth-child(5)').click()
 
 
     driver.find_element_by_name('searchName').send_keys(soldier_name)
@@ -88,7 +88,7 @@ def sendmail(name, title, contents):
     driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[1]/table/tbody/tr[8]/td/input').send_keys(pwd)
 
     # Submit
-    driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[2]/span[1]/input').click()
+    # driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[2]/span[1]/input').click()
 
     driver.quit()
 
