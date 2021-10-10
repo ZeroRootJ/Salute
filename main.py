@@ -1,4 +1,7 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import os
 
 
@@ -20,7 +23,7 @@ def sendmail(name, title, contents):
     options.add_argument("window-size=1920x1080")
     options.add_argument("disable-gpu")
     driver_path = '/Users/yk/PycharmProjects/IPbot/chromedriver'
-    driver_path = '/home/ubuntu/base/Salute/chromedriver'
+    #driver_path = '/home/ubuntu/base/Salute/chromedriver'
     driver = webdriver.Chrome(driver_path, options=options)
 
     print("webdriver initialized")
@@ -34,6 +37,8 @@ def sendmail(name, title, contents):
 
     driver.switch_to.window(driver.window_handles[1])
     # driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div[3]/a[3]').click()
+    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[2]/div/div[2]/div[3]/a[3]'))).click()
+
     driver.find_element_by_css_selector('#popupWrap > div:nth-child(3) > a:nth-child(5)').click()
 
 
