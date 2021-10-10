@@ -26,7 +26,7 @@ def sendmail(name, title, contents):
     print("webdriver initialized")
 
     # ROKAF main
-    driver.get('https://www.google.com/')
+    driver.get('https://www.google.com/search?q=%EA%B8%B0%EB%B3%B8%EA%B5%B0%EC%82%AC%ED%9B%88%EB%A0%A8%EB%8B%A8&newwindow=1&sxsrf=AOaemvJrncjSP0NasmiAriUSfFMQMjvVIQ%3A1633863640083&ei=2MdiYZy_BM-U-Abu0Qo&ved=0ahUKEwici4Ov2L_zAhVPCt4KHe6oAgAQ4dUDCA4&uact=5&oq=%EA%B8%B0%EB%B3%B8%EA%B5%B0%EC%82%AC%ED%9B%88%EB%A0%A8%EB%8B%A8&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIECAAQHjIECAAQHjIECAAQHjIECAAQHjIECAAQHjIECAAQHjIECAAQHjIECAAQHjoECCMQJzoICAAQgAQQsQM6CwgAEIAEELEDEIMBOgcIIxDqAhAnOgoIABCABBCHAhAUOgQIABBDSgQIQRgAUJp1WOyKAWCgjAFoBHAAeAKAAYoCiAGnF5IBBjAuMTguMZgBAKABAbABCsABAQ&sclient=gws-wiz')
     print("ROKAF main1")
     driver.find_element_by_name('searchName').send_keys(soldier_name)
     print("ROKAF main2")
