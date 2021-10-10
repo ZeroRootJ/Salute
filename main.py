@@ -16,11 +16,11 @@ def sendmail(name, title, contents):
     pwd = '1234'
 
     options = webdriver.ChromeOptions()
-    # options.add_argument("--headless")
+    options.add_argument("--headless")
     options.add_argument("window-size=1920x1080")
     options.add_argument("disable-gpu")
-    driver_path = '/Users/yk/PycharmProjects/IPbot/chromedriver'
-    # driver_path = '/home/ubuntu/base/Salute/chromedriver'
+    # driver_path = '/Users/yk/PycharmProjects/IPbot/chromedriver'
+    driver_path = '/home/ubuntu/base/Salute/chromedriver'
     driver = webdriver.Chrome(driver_path, options=options)
 
     print("webdriver initialized")
