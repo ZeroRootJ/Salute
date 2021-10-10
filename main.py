@@ -62,7 +62,7 @@ def sendmail(name, title, contents):
     # Input Address
     driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[1]/table/tbody/tr[3]/td/div[1]/span/input').click()
     driver.switch_to.window(driver.window_handles[2])
-    driver.find_element_by_xpath('/html/body/div/div[2]/button[2]').click() # warning discard
+    # driver.find_element_by_xpath('/html/body/div/div[2]/button[2]').click() # warning discard
     driver.find_element_by_xpath('/html/body/form[2]/div/div[1]/div/div[1]/fieldset/span/input[1]').send_keys(addr)
     driver.find_element_by_xpath('/html/body/form[2]/div/div[1]/div/div[1]/fieldset/span/input[2]').click()
     driver.find_element_by_xpath('/html/body/form[2]/div/div[1]/div/div[2]/table/tbody/tr/td[2]/a/div/span[2]').click()
