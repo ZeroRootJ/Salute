@@ -26,7 +26,7 @@ def sendmail(name, title, contents):
     print("webdriver initialized")
 
     # ROKAF main
-    driver.get('https://www.airforce.mil.kr/user/indexMain.action?siteId=last2')
+    driver.get('https://www.google.com/')
     print("ROKAF main1")
     driver.find_element_by_name('searchName').send_keys(soldier_name)
     print("ROKAF main2")
