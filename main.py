@@ -30,6 +30,10 @@ def sendmail(name, title, contents):
     print("1")
     driver.find_element_by_xpath('/html/body/div[7]/div/div[9]/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div/div/div/div[1]/a/h3').click()
     print("2")
+    driver.switch_to.window(driver.window_handles[1])
+    driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div[3]/a[3]').click()
+
+
     driver.find_element_by_name('searchName').send_keys(soldier_name)
     print("ROKAF main2")
     driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[2]/table/tbody/tr[2]/td[2]/input[1]').send_keys(birthYear)
@@ -43,13 +47,13 @@ def sendmail(name, title, contents):
     print("ROKAF main complete")
 
     # Pop up
-    driver.switch_to.window(driver.window_handles[1])
+    driver.switch_to.window(driver.window_handles[2])
     driver.find_element_by_xpath('/html/body/div/ul/li/input').click()
 
     print("pop up")
 
     # Submit
-    driver.switch_to.window(driver.window_handles[0])
+    driver.switch_to.window(driver.window_handles[1])
     driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[3]/span/input').click()
 
     # Submit
@@ -57,7 +61,7 @@ def sendmail(name, title, contents):
 
     # Input Address
     driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div/div/form/div[1]/table/tbody/tr[3]/td/div[1]/span/input').click()
-    driver.switch_to.window(driver.window_handles[1])
+    driver.switch_to.window(driver.window_handles[2])
     driver.find_element_by_xpath('/html/body/div/div[2]/button[2]').click() # warning discard
     driver.find_element_by_xpath('/html/body/form[2]/div/div[1]/div/div[1]/fieldset/span/input[1]').send_keys(addr)
     driver.find_element_by_xpath('/html/body/form[2]/div/div[1]/div/div[1]/fieldset/span/input[2]').click()
@@ -68,7 +72,7 @@ def sendmail(name, title, contents):
     print("address")
 
     # Switch to main
-    driver.switch_to.window(driver.window_handles[0])
+    driver.switch_to.window(driver.window_handles[1])
 
     # Name
     driver.find_element_by_id('senderName').send_keys(name)
