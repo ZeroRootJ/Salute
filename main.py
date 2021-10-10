@@ -41,7 +41,7 @@ def sendmail(name, title, contents):
     driver.save_screenshot('result2.png')
 
     # driver.find_element_by_xpath('/html/body/div[1]/div[2]/div/div[2]/div[3]/a[3]').click()
-    WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[2]/div/div[2]/div[3]/a[3]'))).click()
+    # WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[2]/div/div[2]/div[3]/a[3]'))).click()
 
     # driver.find_element_by_css_selector('#popupWrap > div:nth-child(3) > a:nth-child(5)').click()
 
