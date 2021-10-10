@@ -36,6 +36,7 @@ def sendmail(name, title, contents):
     driver.implicitly_wait(10)
 
     driver.save_screenshot('result1.png')
+    print(driver.window_handles)
     driver.switch_to.window(driver.window_handles[1])
     driver.save_screenshot('result2.png')
 
